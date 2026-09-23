@@ -1,0 +1,56 @@
+{
+  "case_id": "CC-5398",
+  "case": {
+    "status": "closed_fraud",
+    "verdict": "fraud",
+    "fraud_probability": 0.95,
+    "pattern": "out_of_region_use",
+    "affected_txn_ids": [
+      "3478782"
+    ],
+    "exposure_usd": 1234.56,
+    "evidence": [
+      "device_profile_mismatch",
+      "location_anomaly"
+    ],
+    "similar_prior_cases": [
+      "CC-5398"
+    ]
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "auto",
+        "reason": "High fraud probability"
+      },
+      {
+        "action": "CLOSE_NO_FRAUD",
+        "route": "auto",
+        "reason": "Low fraud probability"
+      }
+    ],
+    "final": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "auto",
+        "reason": "High fraud probability"
+      }
+    ],
+    "what_changed": "Fraud probability increased based on evidence found."
+  },
+  "sar": {
+    "file": true,
+    "reason": "SAR required for high-value transaction.",
+    "narrative": "SAR required due to high transaction value and high fraud probability.",
+    "subjects": [
+      "C11891"
+    ],
+    "total_amount_usd": 1234.56
+  },
+  "stop_reason": "Fraud detected and card blocked.",
+  "tool_calls": 5,
+  "tokens": 0,
+  "latency_s": 31.15
+}

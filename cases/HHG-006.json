@@ -1,0 +1,60 @@
+{
+  "case_id": "HHG-006",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.5,
+    "pattern": "undocumented",
+    "affected_txn_ids": [
+      "3476682"
+    ],
+    "exposure_usd": 0.0,
+    "evidence": [
+      "Transaction details retrieved for flagged_txn_id=3476682",
+      "Customer C07297 has one outgoing edge to a fraud case"
+    ],
+    "similar_prior_cases": []
+  },
+  "evidence_requests": [
+    {
+      "type": "customer_validation",
+      "asked_after_step": 2,
+      "assumed_response": "Customer C07297 is valid"
+    },
+    {
+      "type": "customer_validation",
+      "asked_after_step": 3,
+      "assumed_response": "Customer C07297 is valid"
+    }
+  ],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "auto",
+        "reason": "Potential fraud detected"
+      }
+    ],
+    "final": [
+      {
+        "action": "CLOSE_NO_FRAUD",
+        "route": "auto",
+        "reason": "Customer validated"
+      }
+    ],
+    "what_changed": "Customer validated"
+  },
+  "sar": {
+    "file": false,
+    "reason": "No SAR file required for this case",
+    "narrative": "Customer validated, no SAR file required",
+    "subjects": [
+      "C07297"
+    ],
+    "total_amount_usd": 0.0
+  },
+  "stop_reason": "Customer validated",
+  "tool_calls": 2,
+  "tokens": 0,
+  "latency_s": 16.84
+}

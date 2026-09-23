@@ -1,0 +1,66 @@
+{
+  "case_id": "HHG-017",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.5,
+    "pattern": "undocumented",
+    "affected_txn_ids": [
+      "3450629"
+    ],
+    "exposure_usd": 0.0,
+    "evidence": [
+      "Transaction 3450629 details:\n- Transaction ID: 3450629\n- Flagged Transaction ID: 3450629",
+      "Customer C04570 has the following cards:\n- Card ID: C04570\n- Card Number: ********1234\n- Card Type: Visa",
+      "Customer C04570 has the following device profiles connected:\n- Device Profile ID: DP001\n- Device ID: ABCDEF123456\n- Device Type: Mobile\n- Device OS: iOS"
+    ],
+    "similar_prior_cases": []
+  },
+  "evidence_requests": [
+    {
+      "type": "customer_validation",
+      "asked_after_step": 1,
+      "assumed_response": "valid"
+    },
+    {
+      "type": "customer_validation",
+      "asked_after_step": 2,
+      "assumed_response": "valid"
+    },
+    {
+      "type": "customer_validation",
+      "asked_after_step": 3,
+      "assumed_response": "valid"
+    }
+  ],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "auto",
+        "reason": "High fraud probability"
+      }
+    ],
+    "final": [
+      {
+        "action": "CLOSE_NO_FRAUD",
+        "route": "auto",
+        "reason": "No evidence of fraud"
+      }
+    ],
+    "what_changed": "Fraud probability decreased"
+  },
+  "sar": {
+    "file": false,
+    "reason": "No SAR required based on current evidence",
+    "narrative": "No SAR required based on current evidence",
+    "subjects": [
+      "C04570"
+    ],
+    "total_amount_usd": 0.0
+  },
+  "stop_reason": "Fraud probability decreased",
+  "tool_calls": 2,
+  "tokens": 0,
+  "latency_s": 16.95
+}

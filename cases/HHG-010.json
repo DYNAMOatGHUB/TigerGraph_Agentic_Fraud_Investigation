@@ -1,0 +1,69 @@
+{
+  "case_id": "HHG-010",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.65,
+    "pattern": "undocumented",
+    "affected_txn_ids": [],
+    "exposure_usd": 0.0,
+    "evidence": [
+      "Transaction 3506725 flagged"
+    ],
+    "similar_prior_cases": [
+      "FC-001"
+    ]
+  },
+  "evidence_requests": [
+    {
+      "type": "customer_validation",
+      "asked_after_step": 1,
+      "assumed_response": "valid"
+    },
+    {
+      "type": "customer_validation",
+      "asked_after_step": 2,
+      "assumed_response": "valid"
+    },
+    {
+      "type": "customer_validation",
+      "asked_after_step": 3,
+      "assumed_response": "valid"
+    }
+  ],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "auto",
+        "reason": "High fraud probability"
+      },
+      {
+        "action": "CLOSE_NO_FRAUD",
+        "route": "auto",
+        "reason": "Low exposure"
+      }
+    ],
+    "final": [
+      {
+        "action": "CLOSE_NO_FRAUD",
+        "route": "auto",
+        "reason": "Low exposure"
+      }
+    ],
+    "what_changed": "Changed from BLOCK_CARD to CLOSE_NO_FRAUD"
+  },
+  "sar": {
+    "file": false,
+    "reason": "No SAR file required for this case",
+    "narrative": "The transaction was flagged due to unusual activity, but after investigation, it was found to be a false positive. The customer's cards and device profiles were checked and found to be associated with a prior closed fraud case, but the exposure was low and the fraud probability decreased after further investigation. Therefore, no SAR file is required for this case.",
+    "subjects": [
+      "C10434"
+    ],
+    "total_amount_usd": 0.0
+  },
+  "stop_reason": "Low exposure",
+  "tool_calls": 2,
+  "tokens": 0,
+  "latency_s": 17.6
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "HHG-004",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.65,
+    "pattern": "undocumented",
+    "affected_txn_ids": [],
+    "exposure_usd": 0.0,
+    "evidence": [],
+    "similar_prior_cases": []
+  },
+  "evidence_requests": [],
+  "next_best_actions": {
+    "initial": [],
+    "final": [],
+    "what_changed": ""
+  },
+  "sar": {
+    "file": false,
+    "reason": "",
+    "narrative": "",
+    "subjects": [],
+    "total_amount_usd": 0.0
+  },
+  "stop_reason": "",
+  "tool_calls": 2,
+  "tokens": 0,
+  "latency_s": 19.07
+}

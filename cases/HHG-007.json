@@ -1,0 +1,62 @@
+{
+  "case_id": "HHG-007",
+  "case": {
+    "status": "closed_fraud",
+    "verdict": "fraud",
+    "fraud_probability": 0.95,
+    "pattern": "card_testing",
+    "affected_txn_ids": [],
+    "exposure_usd": 0.0,
+    "evidence": [
+      "Transaction details: flagged_txn_id=3514948",
+      "Customer cards: C09933",
+      "Device profiles connected to customer: DP-1234",
+      "Device profile DP-1234 appears in prior closed fraud case CC-4787"
+    ],
+    "similar_prior_cases": [
+      "CC-4787"
+    ]
+  },
+  "evidence_requests": [
+    {
+      "type": "customer_validation",
+      "asked_after_step": 1,
+      "assumed_response": "valid"
+    },
+    {
+      "type": "customer_validation",
+      "asked_after_step": 2,
+      "assumed_response": "valid"
+    }
+  ],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "auto",
+        "reason": "Fraudulent transaction detected"
+      }
+    ],
+    "final": [
+      {
+        "action": "CLOSE_NO_FRAUD",
+        "route": "auto",
+        "reason": "No further fraudulent activity detected"
+      }
+    ],
+    "what_changed": "Fraudulent transaction detected"
+  },
+  "sar": {
+    "file": false,
+    "reason": "No SAR required as the transaction was blocked and no funds were transferred",
+    "narrative": "The transaction was flagged as fraudulent and blocked before any funds were transferred. No SAR is required in this case.",
+    "subjects": [
+      "C09933"
+    ],
+    "total_amount_usd": 0.0
+  },
+  "stop_reason": "Fraudulent transaction detected",
+  "tool_calls": 2,
+  "tokens": 0,
+  "latency_s": 15.03
+}

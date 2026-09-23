@@ -1,0 +1,73 @@
+{
+  "case_id": "HHG-018",
+  "case": {
+    "status": "open",
+    "verdict": "uncertain",
+    "fraud_probability": 0.65,
+    "pattern": "undocumented",
+    "affected_txn_ids": [
+      "3491361"
+    ],
+    "exposure_usd": 1250.0,
+    "evidence": [
+      "Transaction 3491361 flagged for investigation"
+    ],
+    "similar_prior_cases": [
+      "CC-4942",
+      "CC-1450",
+      "CC-3634",
+      "CC-4721",
+      "CC-3899",
+      "CC-3085",
+      "CC-4436",
+      "CC-0255",
+      "CC-3537",
+      "CC-5441",
+      "CC-1699",
+      "CC-4070",
+      "CC-5558"
+    ]
+  },
+  "evidence_requests": [
+    {
+      "type": "customer_validation",
+      "asked_after_step": 2,
+      "assumed_response": "valid"
+    },
+    {
+      "type": "customer_validation",
+      "asked_after_step": 3,
+      "assumed_response": "valid"
+    }
+  ],
+  "next_best_actions": {
+    "initial": [
+      {
+        "action": "BLOCK_CARD",
+        "route": "auto",
+        "reason": "High fraud probability"
+      }
+    ],
+    "final": [
+      {
+        "action": "CLOSE_NO_FRAUD",
+        "route": "auto",
+        "reason": "Low exposure and uncertain verdict"
+      }
+    ],
+    "what_changed": "Verdict changed from 'fraud' to 'no fraud'"
+  },
+  "sar": {
+    "file": false,
+    "reason": "No SAR file found for this case",
+    "narrative": "No narrative provided for this case",
+    "subjects": [
+      "C02354"
+    ],
+    "total_amount_usd": 0.0
+  },
+  "stop_reason": "Fraud case closed with no fraud found",
+  "tool_calls": 2,
+  "tokens": 0,
+  "latency_s": 18.08
+}
