@@ -199,5 +199,5 @@ streamlit run dashboard.py
 ---
 
 <div align="center">
-Built with ❤️ at <strong>Hacker House Goa 2026</strong> · Team DYNAMO
+Built by Team HYDES
 </div>
